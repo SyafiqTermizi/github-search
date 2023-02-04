@@ -3,8 +3,10 @@
     import type { Repo } from "../types";
 
     let repos: Repo[] = [];
-    searchResult.subscribe((sr) => {
-        repos = sr.items;
+    searchResult.subscribe((value) => {
+        if (value) {
+            repos = value.items;
+        }
     });
 </script>
 

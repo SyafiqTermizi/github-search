@@ -9,7 +9,11 @@ export function search() {
     const searchTopics = get(topics);
     const queryString = searchTopics.map(topic => `topic:${topic}`).join("+");
 
-    fetch(`${baseURL}${queryString}`)
-        .then(response => response.json())
-        .then(data => searchResult.set(data));
+    if (searchTopics.length) {
+        fetch(`${baseURL}${queryString}`)
+            .then(response => response.json())
+            .then(data => {
+                searchResult.set(data);
+            });
+    }
 }

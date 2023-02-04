@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { topics } from "../store";
+    import { topics, search } from "../store";
 
     let inputValue: string;
 
@@ -26,6 +26,8 @@
         </form>
     </div>
     <div class="mt-3 col-sm-12 col-md-2 d-grid d-md-block">
-        <button class="btn btn-outline-primary">Search</button>
+        <button class="btn btn-outline-primary" on:click={() => search()}>
+            Search
+        </button>
     </div>
 </div>
