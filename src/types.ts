@@ -115,3 +115,21 @@ export interface License {
     url: string;
     node_id: string;
 }
+
+export type Language =
+    | "JavaScript"
+    | "Python"
+    | "Vue"
+    | "Svelte"
+    | "HTML"
+    | "CSS"
+    | "Dockerfile"
+    | "TypeScript"
+    | "Jupyter Notebook"
+    | "Swift"
+    | "Shell"
+    | "PHP"
+    | "Go"
+    | "Ruby"
+    | "C"
+    | string;
