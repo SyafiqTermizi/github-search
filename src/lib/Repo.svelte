@@ -1,12 +1,14 @@
 <script lang="ts">
-    import { searchResult } from "../store";
+    import { searchResult, topics } from "../store";
     import type { Repo } from "../types";
 
     import Star from "./icons/Star.svelte";
     import Badge from "./Badge.svelte";
+    import RepoTopic from "./RepoTopic.svelte";
 
     let repos: Repo[] = [];
     let repoCount: number = 0;
+
     searchResult.subscribe((value) => {
         if (value) {
             repos = value.items;
@@ -34,6 +36,13 @@
                 </a>
             </h5>
             <p>{repo.description}</p>
+
+            {#if repo.topics.length}
+                <p>
+                    <RepoTopic topics={repo.topics} />
+                </p>
+            {/if}
+
             <p class="text-muted">
                 <small>
                     <span>
