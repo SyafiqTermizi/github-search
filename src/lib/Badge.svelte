@@ -1,29 +1,16 @@
 <script lang="ts">
-    import type { Language } from "../types";
-
-    export let language: Language;
-
-    const languageMapping = {
-        JavaScript: "primary",
-        Python: "secondary",
-        Vue: "success",
-        Svelte: "info",
-        HTML: "warning",
-        CSS: "danger",
-        Dockerfile: "light",
-        TypeScript: "dark",
-        "Jupyter Notebook": "primary",
-        Swift: "secondary",
-        Shell: "success",
-        PHP: "info",
-        Go: "warning",
-        Ruby: "danger",
-        C: "light",
-    };
-
-    const colorClass = languageMapping[language]
-        ? languageMapping[language]
-        : "primary";
+    export let className: string;
+    export let displayText: string;
 </script>
 
-<span class={`badge rounded-pill text-bg-${colorClass}`}>{language}</span>
+<span class="badge rounded-pill {className}">{displayText}</span>
+
+<style>
+    .text-bg-topic {
+        color: #0d6efd;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #0d6efd;
+        background-color: LightCyan;
+    }
+</style>

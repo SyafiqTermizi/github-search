@@ -3,7 +3,7 @@
     import type { Repo } from "../types";
 
     import Star from "./icons/Star.svelte";
-    import Badge from "./Badge.svelte";
+    import Badge from "./Language.svelte";
     import RepoTopic from "./RepoTopic.svelte";
 
     let repos: Repo[] = [];
