@@ -22,6 +22,12 @@
                     </button>
                 </p>
             {/each}
+            <button
+                class="btn badge bg-danger btn-sm me-2 py-2"
+                on:click={() => topics.set([])}
+            >
+                clear
+            </button>
         </div>
     </div>
 {/if}
