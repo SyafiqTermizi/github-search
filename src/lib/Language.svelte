@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Language } from "../types";
     import Badge from "./Badge.svelte";
+
     export let language: Language;
 
     const languageMapping = {
