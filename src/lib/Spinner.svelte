@@ -3,7 +3,7 @@
 </script>
 
 {#if $loading}
-    <div class="row mt-5">
+    <div class="row mt-5 " data-testid="spinner">
         <div class="col-12 text-center">
             <div
                 class="spinner-border"
