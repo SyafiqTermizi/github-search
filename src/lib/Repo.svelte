@@ -18,7 +18,7 @@
 </script>
 
 {#if repos.length && !$loading}
-    <div class="row">
+    <div class="row mt-1">
         <p>
             <b>
                 {repoCount} repository results

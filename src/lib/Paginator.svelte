@@ -17,50 +17,46 @@
 </script>
 
 {#if maxPage > 1}
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item">
-                        <button
-                            class="page-link"
-                            class:disabled={currentPage === 1}
-                            on:click={() => {
-                                currentPageStore.set(1);
-                                search();
-                            }}
-                        >
-                            <span aria-hidden="true">&laquo;</span>
-                        </button>
-                    </li>
-                    {#each pages as page}
-                        <li class="page-item">
-                            <button
-                                class="page-link"
-                                class:active={page === currentPage}
-                                on:click={() => {
-                                    currentPageStore.set(page);
-                                    search();
-                                }}
-                            >
-                                {page}
-                            </button>
-                        </li>
-                    {/each}
-                    <li class="page-item">
-                        <button
-                            class="page-link"
-                            class:disabled={currentPage === maxPage}
-                            on:click={() => {
-                                currentPageStore.set(maxPage);
-                                search();
-                            }}
-                        >
-                            <span aria-hidden="true">&raquo;</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <button
+                    class="page-link"
+                    class:disabled={currentPage === 1}
+                    on:click={() => {
+                        currentPageStore.set(1);
+                        search();
+                    }}
+                >
+                    <span aria-hidden="true">&laquo;</span>
+                </button>
+            </li>
+            {#each pages as page}
+                <li class="page-item">
+                    <button
+                        class="page-link"
+                        class:active={page === currentPage}
+                        on:click={() => {
+                            currentPageStore.set(page);
+                            search();
+                        }}
+                    >
+                        {page}
+                    </button>
+                </li>
+            {/each}
+            <li class="page-item">
+                <button
+                    class="page-link"
+                    class:disabled={currentPage === maxPage}
+                    on:click={() => {
+                        currentPageStore.set(maxPage);
+                        search();
+                    }}
+                >
+                    <span aria-hidden="true">&raquo;</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
 {/if}
