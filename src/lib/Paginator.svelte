@@ -4,22 +4,15 @@
         search,
         currentPage as currentPageStore,
     } from "../store";
-    let pages: number[];
-    let maxPage: number = 0;
+
     let currentPage: number = 0;
+    let maxPage: number = 0;
+    let pages: number[];
 
     pageInfo.subscribe((values) => {
-        [maxPage, currentPage] = values;
-
-        const localPages: number[] = [];
-
-        for (let i = -2; i <= 2; i++) {
-            if (currentPage + i > 0 && currentPage + i <= maxPage) {
-                localPages.push(currentPage + i);
-            }
-        }
-        console.log(currentPage, localPages, maxPage);
-        pages = [...localPages];
+        currentPage = values.currentPage;
+        maxPage = values.maxPage;
+        pages = values.pages;
     });
 </script>
 

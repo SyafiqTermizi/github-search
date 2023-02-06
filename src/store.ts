@@ -27,8 +27,20 @@ export function search() {
 export const pageInfo = derived(
     [searchResult, currentPage],
     ([$searchResult, $currentPage]) => {
-        const maxPage = $searchResult.total_count > 100
+        const maxPage: number = $searchResult.total_count > 100
             ? Math.ceil(100 / 3)
             : Math.ceil($searchResult.total_count / 30);
-        return [maxPage, $currentPage]
+
+        const pages: number[] = [];
+        for (let i = -2; i <= 2; i++) {
+            if ($currentPage + i > 0 && $currentPage + i <= maxPage) {
+                pages.push($currentPage + i);
+            }
+        }
+
+        return {
+            currentPage: $currentPage,
+            maxPage: maxPage,
+            pages: pages
+        };
     })
