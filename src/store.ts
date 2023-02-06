@@ -3,12 +3,12 @@ import type { SearchResult } from "./types";
 
 export const topics = writable<string[]>([]);
 export const currentPage = writable<number>(1);
+export const loading = writable<boolean>(false);
 export const searchResult = writable<SearchResult>({
     "total_count": 0,
     "incomplete_results": false,
     "items": []
-}
-);
+});
 
 export function search() {
     const baseURL = "https://api.github.com/search/repositories?q="
@@ -16,10 +16,12 @@ export function search() {
     const queryString = searchTopics.map(topic => `topic:${topic}`).join("+");
 
     if (searchTopics.length) {
+        loading.set(true);
         fetch(`${baseURL}${queryString}&page=${get(currentPage)}`)
             .then(response => response.json())
             .then(data => {
                 searchResult.set(data);
+                loading.set(false);
             });
     }
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { searchResult } from "../store";
+    import { searchResult, loading } from "../store";
     import type { Repo } from "../types";
 
     import Star from "./icons/Star.svelte";
@@ -17,7 +17,7 @@
     });
 </script>
 
-{#if repos.length}
+{#if repos.length && !$loading}
     <div class="row">
         <p>
             <b>
