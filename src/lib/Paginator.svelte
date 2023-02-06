@@ -18,7 +18,7 @@
 
 {#if maxPage > 1}
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12">
             <nav>
                 <ul class="pagination">
                     <li class="page-item">

@@ -8,18 +8,23 @@
     }
 </script>
 
-<div class="row">
-    <div class="mt-3">
-        {#each $topics as topic}
-            <p class="btn badge bg-secondary btn-sm me-2">
-                {topic}
-                <button class="btn badge" on:click={() => removeTopic(topic)}>
-                    x
-                </button>
-            </p>
-        {/each}
+{#if $topics.length}
+    <div class="row">
+        <div class="mt-3">
+            {#each $topics as topic}
+                <p class="btn badge bg-secondary btn-sm me-2">
+                    {topic}
+                    <button
+                        class="btn badge"
+                        on:click={() => removeTopic(topic)}
+                    >
+                        x
+                    </button>
+                </p>
+            {/each}
+        </div>
     </div>
-</div>
+{/if}
 
 <style>
     p.btn:hover {

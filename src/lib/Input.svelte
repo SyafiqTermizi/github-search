@@ -15,7 +15,7 @@
 </script>
 
 <div class="row">
-    <div class="mt-3 col-sm-12 col-md-10">
+    <div class="col-sm-12 col-md-10 mt-3">
         <form on:submit|preventDefault={handleSubmit} method="get">
             <input
                 type="text"
@@ -25,7 +25,7 @@
             />
         </form>
     </div>
-    <div class="mt-3 col-sm-12 col-md-2 d-grid d-md-block">
+    <div class="col-sm-12 col-md-2 mt-3 d-grid d-md-block">
         <button class="btn btn-outline-primary" on:click={() => search()}>
             Search
         </button>
