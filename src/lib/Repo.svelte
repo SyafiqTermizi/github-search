@@ -63,6 +63,13 @@
             {/each}
         </div>
     </div>
+{:else if !repos.length && !$loading}
+    <div class="row mt-5">
+        <div class="col-12 text-center mt-5">
+            <h3>No repo to show</h3>
+            <p>Start searching to see search results</p>
+        </div>
+    </div>
 {/if}
 
 <style>
