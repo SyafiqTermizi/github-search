@@ -16,7 +16,11 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-10 mt-3">
-        <form on:submit|preventDefault={handleSubmit} method="get">
+        <form
+            on:submit|preventDefault={handleSubmit}
+            method="get"
+            data-testid="topic-form"
+        >
             <input
                 type="text"
                 class="form-control"
